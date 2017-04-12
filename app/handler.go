@@ -1,4 +1,4 @@
-package handler
+package app
 
 import (
 	"fmt"
@@ -8,8 +8,11 @@ import (
 	"github.com/gorilla/context"
 )
 
-// GetUser returns information stored in the JWT token
-func GetUser(w http.ResponseWriter, r *http.Request) {
+func (a *App) upload(w http.ResponseWriter, req *http.Request) {
+	panic("oh no")
+}
+
+func (a *App) getUser(w http.ResponseWriter, r *http.Request) {
 	user := context.Get(r, "user")
 	fmt.Fprintf(w, "This is an authenticated request")
 	fmt.Fprintf(w, "Claim content:\n")
